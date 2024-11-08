@@ -1,4 +1,4 @@
-use pac::Pwm;
+use pac::{Pwm0, Pwm1, Pwm2, Pwm3};
 
 /// Max period length configurable by the HAL.
 pub const MAX_PERIOD: u32 = u16::MAX as u32;
@@ -64,4 +64,7 @@ macro_rules! impl_pwm_peripheral {
 }
 
 // FIXME: JH7110 TRM says the PWM is eight-channel, but there is only one entry in the DTS file...
-impl_pwm_peripheral!(Pwm);
+impl_pwm_peripheral!(Pwm0);
+impl_pwm_peripheral!(Pwm1);
+impl_pwm_peripheral!(Pwm2);
+impl_pwm_peripheral!(Pwm3);
